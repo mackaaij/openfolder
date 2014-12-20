@@ -1,0 +1,5 @@
+Request a list of subfolders on the original network:
+dir *. > textfile.txt
+
+Create the subfolders on the testmachine (workstation):
+for /F "tokens=*" %i in (textfile.txt) do md "%i"
