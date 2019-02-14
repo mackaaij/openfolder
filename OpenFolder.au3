@@ -12,7 +12,7 @@ $dbl_oldx=0
 $dbl_oldy=0
 $dbl_StartTime=0
 
-$windowtitle="OpenFolder 1.5"
+$windowtitle="OpenFolder 1.6"
 
 ; If no or more than two parameters are supplied return an error (two is the max and one is optional)
 If $CmdLine[0]=0 OR $CmdLine[0]>2 then
@@ -132,7 +132,7 @@ While 1
 						; Read the website from the ini file using the text of the selected menu item
 						$url=IniRead(@ScriptDir & "\OpenFolder.ini", GUICtrlRead ($element,1), "URL", "") & $Number[0]
 						; If the ini read deliverd a value then open up a browser window
-						If NOT ($url = "" & $Number[0]) Then _IECreate($url, 1, 1, 0)
+						If NOT ($url = "" & $Number[0]) Then ShellExecute($url)
 					EndIf	
 				EndIf
 			Next
